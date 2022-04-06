@@ -1,0 +1,29 @@
+<h2 class="text-center">All Records</h2>
+
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of dataList;let i=index">
+
+            <td>{{data.id}}</td>
+            <td>{{data.title}}</td>
+            <td>{{data.description}}</td>
+            <td>{{data.quantity}}</td>
+            <td>{{data.price}}</td>
+            <td>{{data.date}}</td>
+        </tr>
+
+    </tbody>
+    <button class="btn btn-success"><a routerLink="/myForm"
+            style="text-decoration: none; color: white;">Back</a></button>
+</table>

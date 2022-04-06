@@ -1,0 +1,70 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+    <button class="btn btn-success showButton"><a routerLink="/ShowDataList" class="text-center ">Show data</a></button>
+</nav>
+
+
+
+<div class="container">
+
+
+
+
+    <div *ngFor="let row of groups; let i = index ">
+        <div>
+
+            <form [formGroup]="myForm" style="margin: 5%;">
+                <div class="row">
+                    <div class="col ">
+                        <input type="text" class="form-control inputField" formControlName="title" placeholder="Title"
+                            name="title[i]" [(ngModel)]="tempObj.title">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control inputField" formControlName="description"
+                            placeholder="Description" name="desc" [(ngModel)]="tempObj.description">
+
+                    </div>
+
+                    <div class="col">
+                        <input type="number" class="form-control inputField" formControlName="quantity"
+                            placeholder="Quantity" name="quantity" [(ngModel)]="tempObj.quantity">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control inputField" formControlName="price" placeholder="Price"
+                            name="price" [(ngModel)]="tempObj.price">
+                    </div>
+                    <div class="col">
+                        <input type="date" class="form-control inputField" formControlName="date" placeholder="Date"
+                            name="date" [(ngModel)]="tempObj.date">
+                    </div>
+                    <button type="submit" (click)="saveData()" class="btn btn-info"
+                        style="margin-left: 2%;">Submit</button>
+                    <button (click)=" addItem(i)" class="btn btn-success" style="margin-left: 2%;">Add Row</button>
+                    <button (click)="deleteRow(i)" style="margin-left: 2%;" class="btn btn-danger">Remove</button>
+
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+</div>
